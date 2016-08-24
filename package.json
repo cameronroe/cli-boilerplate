@@ -1,0 +1,55 @@
+{
+  "name": "cli-boilerplate",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "babel": {
+    "presets": [
+      "es2015",
+      "stage-0"
+    ]
+  },
+  "scripts": {
+    "lint": "eslint --ext .js,.jsx .",
+    "lint:fix": "eslint --fix --ext .js,.jsx .",
+    "test": "mocha --recursive --compilers js:babel-register",
+    "test:watch": "npm t -- -w",
+    "cover": "nyc npm t -r lcov",
+    "check-coverage": "nyc check-coverage --lines 95 --functions 95 --branches 95",
+    "report-coverage": "codecov -t 759de1b3-35e5-4742-a96e-3d6d37d6f4bd",
+    "build": "babel src -d lib",
+    "semantic-release": "semantic-release pre && npm publish && semantic-release post"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cameronroe/cli-boilerplate.git"
+  },
+  "bin": {
+    "command": "bin/command.js"
+  },
+  "keywords": [],
+  "author": "Cameron Roe <cameronjroe@gmail.com> (http://cameronroe.com/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/cameronroe/cli-boilerplate/issues"
+  },
+  "homepage": "https://github.com/cameronroe/cli-boilerplate#readme",
+  "devDependencies": {
+    "babel-cli": "6.14.0",
+    "babel-preset-es2015": "6.14.0",
+    "babel-preset-stage-0": "6.5.0",
+    "chai": "3.5.0",
+    "codecov": "1.0.1",
+    "eslint": "3.3.1",
+    "eslint-config-airbnb": "10.0.1",
+    "eslint-plugin-import": "1.14.0",
+    "mocha": "3.0.2",
+    "nyc": "8.1.0",
+    "semantic-release": "4.3.5",
+    "sinon": "1.17.5"
+  },
+  "dependencies": {
+    "chalk": "1.1.3",
+    "commander": "2.9.0"
+  }
+}
